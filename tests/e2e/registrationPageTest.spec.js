@@ -81,3 +81,26 @@ test('Verify user data is displayed correctly after registration and login', asy
     await expect(page.getByLabel('Telefon')).toHaveValue('+385123456789');
 
 });
+
+test('Page language converter functionality tets', async ({page}) => {
+
+    const fullPage = page.locator('body > .container');
+
+    await page.getByRole('link', { name: 'Registrirajte se sada' }).click();
+    await page.getByRole('link').nth(2).click();
+    await expect(page.getByText('Already a member? Sign in')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Start your free trial' })).toBeVisible();
+    await expect(page.getByText('Thanks to Rentlio mobile app, we have full control over reservations, rates, and guests at any given moment.')).toBeVisible();
+    await expect.soft(fullPage).toHaveScreenshot('registerPageEnglish.png');
+    await page.getByLabel('Full name').fill('John Doe');
+    await page.getByLabel('Email Address').fill('random@gmail.com');
+    await page.getByLabel('Password').fill('random.123');
+    await page.getByRole('button', { name: 'Continue' }).click();
+    await expect(page.getByRole('heading', { name: 'Tell us more about yourself' })).toBeVisible();
+    await page.locator('.trigger').first().click();
+    await expect(page.getByText('Hotel Vacation Rental Hostel Multi Properties Other Property Type')).toBeVisible();
+    await page.locator('.trigger').first().click();
+    await expect.soft(fullPage).toHaveScreenshot('registerPage2ndStepEnglish.png');
+
+
+});
