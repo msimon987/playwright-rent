@@ -5,8 +5,7 @@ exports.AccountSettings = class AccountSettings {
     constructor(page) {
 
         this.page = page;
-        
-        this.accountSettingsLeftConatiner = page.locator('div#ownerFormContainer');
+        this.accountSettingsPage = page.locator('div#owner');
         this.profilePictureUploadSection = page.locator('div#avatarContainer');
         this.passwordChangeSection = page.locator('form#ownerChangePassword');
         this.userMenu = page.locator('.username > .user_menu');
