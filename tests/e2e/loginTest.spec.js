@@ -86,12 +86,12 @@ test('Verify that click on the page logo redirects to the home page', async ({pa
 
 });
 
-test.only('Verify that user can login and logout with valid credentials', async ({page}) => {
+test('Verify that user can login and logout with valid credentials', async ({page}) => {
 
     const homePage = new HomePage(page);
     const accountSettingsPage = new AccountSettings(page);
 
-    await homePage.logIn('mario.shimon87@gmail.com', 'Zeus.123');
+    await homePage.logIn('mariosimon@gmail.com', 'Zeus.123');
     await accountSettingsPage.userMenu.click();
     await accountSettingsPage.accountSettingsLink.click();
     await expect.soft(accountSettingsPage.firstNameInputField).toHaveValue('Mario');

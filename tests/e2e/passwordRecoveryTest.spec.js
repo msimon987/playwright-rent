@@ -14,7 +14,7 @@ test('Verify all password recovery page elements are displayed', async ({page}) 
     await expect.soft(homePage.signUpNowLink).toBeVisible();
     await expect.soft(homePage.emailInputField).toBeVisible();
     await expect.soft(homePage.sendPasswordRecoveryRequestBtn).toBeVisible();
-    await homePage.emailInputField.fill('mario.shimon87@gmail.com');
+    await homePage.emailInputField.fill('mariosimon@gmail.com');
     await expect.soft(homePage.fullPage).toHaveScreenshot('passwordRecoveryPage.png');
     await homePage.sendPasswordRecoveryRequestBtn.click();
     await expect.soft(homePage.pageLogo).toBeVisible();
@@ -51,7 +51,7 @@ test('Verify that a success message is displayed after valid input', async ({pag
     const homePage = new HomePage(page);
 
     await homePage.passwordRecoveryLink.click();
-    await homePage.passwordRecoveryRequestSend('mario.shimon87@gmail.com');
+    await homePage.passwordRecoveryRequestSend('mariosimon@gmail.com');
     await expect.soft(page.getByText('Upute za promjenu lozinke poslane su na vašu mail adresu')).toBeVisible();
     await expect.soft(homePage.fullPage).toHaveScreenshot('recoveryInstructionsSent.png');
     await homePage.logInPageRedirectBtn.click();
