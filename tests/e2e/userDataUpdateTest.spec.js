@@ -4,7 +4,7 @@ import { AccountSettings } from './pages/AccountSettingsPage';
 test.beforeEach(async ({page}) => {
     const accountSettingsPage = new AccountSettings(page);
     await page.goto('/');
-    await accountSettingsPage.logIn('mariosimon@gmail.com', 'Zeus.123');
+    await accountSettingsPage.logIn('mariosimon2@gmail.com', 'Zeus.123');
 });
 
 test('Korisnicki podaci update test', async ({page}) => {

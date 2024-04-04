@@ -91,7 +91,7 @@ test('Verify that user can login and logout with valid credentials', async ({pag
     const homePage = new HomePage(page);
     const accountSettingsPage = new AccountSettings(page);
 
-    await homePage.logIn('mariosimon@gmail.com', 'Zeus.123');
+    await homePage.logIn('mariosimon2@gmail.com', 'Zeus.123');
     await accountSettingsPage.userMenu.click();
     await accountSettingsPage.accountSettingsLink.click();
     await expect.soft(accountSettingsPage.firstNameInputField).toHaveValue('Mario');
