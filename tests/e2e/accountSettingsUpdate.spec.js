@@ -8,7 +8,7 @@ test.beforeEach(async ({page}) => {
     await accountSettingsPage.logIn('mariosimon@gmail.com', 'Zeus.123');
 });
 
-test.only('User profile image uplaod test', async({page}) => {
+test.only('User profile image uplaod test1', async({page}) => {
 
     const accountSettingsPage = new AccountSettings(page);
 
