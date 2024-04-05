@@ -12,7 +12,7 @@ test('Korisnicki podaci update test', async ({page}) => {
     const accountSettingsPage = new AccountSettings(page);
 
     test.setTimeout(60000);
-    await accountSettingsPage.userMenu.click({timeout: 40000});
+    await accountSettingsPage.userMenu.click({timeout: 20000});
     await accountSettingsPage.accountSettingsLink.click();
     await accountSettingsPage.ownerDataUpdate('John', 'Doe', 'another address', '10000', 'Zagreb', 'Hong Kong', '9876543210', '654321');
     await accountSettingsPage.companyDataUpdate('update poduzece', 'update adressa', '10000', 'Zagreb', 'Haiti','654321');

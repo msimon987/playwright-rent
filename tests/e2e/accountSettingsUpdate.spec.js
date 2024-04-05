@@ -12,7 +12,7 @@ test('User profile image uplaod test', async({page}) => {
 
     const accountSettingsPage = new AccountSettings(page);
 
-    await accountSettingsPage.userMenu.click({timeout: 40000});
+    await accountSettingsPage.userMenu.click({timeout: 20000});
     await accountSettingsPage.accountSettingsLink.click();
     await accountSettingsPage.profilePictureUploadBtn.click();
     await accountSettingsPage.profilePictureUpload('tests/e2e/testImages/javaScriptLogo.png');
@@ -32,7 +32,7 @@ test('Password changes test', async({page}) => {
     const accountSettingsPage = new AccountSettings(page);
     const homePage = new HomePage(page);
     
-    await accountSettingsPage.userMenu.click({timeout: 40000});
+    await accountSettingsPage.userMenu.click({timeout: 20000});
     await accountSettingsPage.accountSettingsLink.click();
     await accountSettingsPage.passwordChange('Zeus.123', 'Posejdon.123', 'Posejdon.123');
     await expect.soft(accountSettingsPage.accountSettingsPage).toHaveScreenshot('passwordChangeSection.png');
@@ -40,7 +40,7 @@ test('Password changes test', async({page}) => {
     await accountSettingsPage.userMenu.click();
     await accountSettingsPage.signOutBtn.click();
     await homePage.logIn('mariosimon2@gmail.com', 'Posejdon.123');
-    await accountSettingsPage.userMenu.click({timeout: 40000});
+    await accountSettingsPage.userMenu.click({timeout: 20000});
     await accountSettingsPage.accountSettingsLink.click();
     await accountSettingsPage.passwordChange('Posejdon.123', 'Zeus.123', 'Zeus.123');
     await page.getByText('Lozinka je promijenjena').waitFor({state:'visible'});
@@ -48,7 +48,7 @@ test('Password changes test', async({page}) => {
     await accountSettingsPage.userMenu.click();
     await accountSettingsPage.signOutBtn.click();
     await homePage.logIn('mariosimon2@gmail.com', 'Zeus.123');
-    await accountSettingsPage.userMenu.click({timeout: 40000});
+    await accountSettingsPage.userMenu.click({timeout: 20000});
     await accountSettingsPage.accountSettingsLink.click();
     await expect(accountSettingsPage.accountSettingsPage).toHaveScreenshot('passwordChangeSection3.png');
 

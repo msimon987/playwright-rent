@@ -46,7 +46,7 @@ test('Verify all validation messages are displayed', async ({page}) => {
     await homePage.countrySelect('Croatia');
     await homePage.phoneInputField.fill('123456789');
     await homePage.acceptTermsCheckBox.click();
-    //await expect.soft(homePage.fullPage).toHaveScreenshot('registration2ndStepPage2.png',{ maxDiffPixelRatio: 0.01 });
+    await expect.soft(homePage.fullPage).toHaveScreenshot('registration2ndStepPage2.png',{ maxDiffPixelRatio: 0.01 });
     await homePage.createAccountBtn.click();
     await expect.soft(page.getByText('Unešena email adresa nije ispravna')).toBeVisible();
     await expect.soft(page.getByText('Lozinka je prekratka.')).toBeVisible();
@@ -56,7 +56,7 @@ test('Verify all validation messages are displayed', async ({page}) => {
     await homePage.continueRegistrationBtn.click();
     await homePage.acceptTermsCheckBox.click();
     await homePage.createAccountBtn.click();
-    //await expect(homePage.fullPage).toHaveScreenshot('existingUserValidation.png');
+    await expect(homePage.fullPage).toHaveScreenshot('existingUserValidation.png');
 
 });
 
@@ -80,7 +80,7 @@ test('Verify user data is displayed correctly after registration and login', asy
     await homePage.phoneInputField.fill('123456789');
     await homePage.acceptTermsCheckBox.click();
     await homePage.createAccountBtn.click();
-    await accountSettingsPage.userMenu.click({timeout: 40000});
+    await accountSettingsPage.userMenu.click({timeout: 20000});
     await accountSettingsPage.accountSettingsLink.click();
     await expect.soft(accountSettingsPage.firstNameInputField).toHaveValue('John');
     await expect.soft(accountSettingsPage.lastNameInputField).toHaveValue('Doe');
