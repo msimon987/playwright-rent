@@ -17,7 +17,7 @@ test('Verify that a new reservation can be added', async ({page}) => {
         const monthWithLeadingZero = String(today.getMonth() + 1).padStart(2, '0');
         const dayWithLeadingZero = String(today.getDate()).padStart(2, '0');
         const minuteLeadingWithZero = String(today.getMinutes()).padStart(2, '0');
-        const date = dayWithLeadingZero + "." + monthWithLeadingZero + "." + today.getFullYear() + ' ' + today.getHours()/* + ":" + minuteLeadingWithZero*/;
+        const date = dayWithLeadingZero + "." + monthWithLeadingZero + "." + today.getFullYear() /*+ ' ' + today.getHours() + ":" + minuteLeadingWithZero*/;
         return date
       };
     
